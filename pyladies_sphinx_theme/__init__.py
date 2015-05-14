@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2015 PyLadies
+
 import os.path
 
 
