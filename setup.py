@@ -13,7 +13,7 @@ with codecs.open(readme_path, encoding='utf-8') as f:
 
 
 setup(
-    name='pyladies_sphinx_theme',
+    name='pyladies-sphinx-theme',
     version='0.1.dev0',
     description='A PyLadies theme for Sphinx',
     long_description=long_description,

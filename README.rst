@@ -13,7 +13,7 @@ How to use this theme
 To use this theme:
 
 #. Install the theme.
-   Run ``pip install pyladies_sphinx_theme``.
+   Run ``pip install pyladies-sphinx-theme``.
 
 #. Modify your Sphinx project's ``conf.py`` to use the theme:
 
