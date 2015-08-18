@@ -1,0 +1,32 @@
+{
+  "name": "pyladies",
+  "version": "0.0.1",
+  "homepage": "https://github.com/pyladies/pyladies-kit",
+  "authors": [
+    "Lynn Root <lynn@pyladies.com>"
+  ],
+  "description": "PyLadies theme for Sphinx.",
+  "license": "MIT",
+  "main": [
+    "dist/**"
+  ],
+  "ignore": [
+    "docs",
+    "demo_docs",
+    ".gitignore",
+    ".DS_Store",
+    ".sass-cache*",
+    ".bowerrc",
+    "bower.json",
+    "package.json",
+    "Gruntfile.js",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ],
+  "devDependencies": {
+    "wyrm": "~0.0.x"
+  }
+}

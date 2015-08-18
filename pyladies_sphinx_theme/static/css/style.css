@@ -1,0 +1,254 @@
+@import url("rtd_theme.css");
+@import url("fonts.css");
+
+/* sky: #A8E5FF
+too effin blue: #29ABE2
+midnight jazz #282560
+light orange: #FFD4A4
+dark orange: #FF8700
+green: rgb(76, 177, 57);
+lime green: rgb(100, 232, 43);
+wild berries: #1D0437;
+*/
+
+/* PyLady geek logo above the search bar */
+.fa-home:before,
+.icon-home:before {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    margin-top: 2px;
+    margin-left: 0px;
+    content: "";
+    background: url("../images/pylady_geek_greyblue_icon.png") no-repeat 0 0;
+    background-size: 100%;
+}
+
+/* background color around the search*/
+
+.wy-side-nav-search {
+    background-color: #29ABE2;
+    margin-bottom: 0em
+}
+
+.wy-side-nav-search input[type=text] {
+    border-color: #29ABE2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: MissionScript, Verdana, Geneva, sans-serif;
+  color: #1D0437;
+}
+
+
+body {
+  font-family: OpenSans, sans-serif;
+}
+
+
+h1 {
+  font-size: 55px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+h6 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+
+pre {
+  font-family: SourceCodePro;
+}
+
+code, .rst-content tt {
+  font-family: SourceCodePro;
+}
+
+
+.wy-nav-content {
+    margin-left: 10px;
+}
+
+a {
+    color: #29ABE2;
+}
+
+a:visited {
+    color: #29ABE2;
+}
+
+/*next buttons*/
+.fa-arrow-circle-left:before,
+.icon-circle-arrow-left:before {
+    content: "\e934"
+}
+
+.fa-arrow-circle-right:before,
+.icon-circle-arrow-right:before {
+    content: "\e935"
+}
+
+/* icon for .. warning and ..note directives */
+
+.fa-exclamation-circle:before,
+.wy-inline-validate.wy-inline-validate-warning .wy-input-context:before,
+.wy-inline-validate.wy-inline-validate-info .wy-input-context:before,
+.rst-content .admonition-title:before {
+    content: "\e88c"
+}
+
+/* link icon after headers */
+
+.rst-content h1 .headerlink:after,
+.rst-content h2 .headerlink:after,
+.rst-content h3 .headerlink:after,
+.rst-content h4 .headerlink:after,
+.rst-content h5 .headerlink:after,
+.rst-content h6 .headerlink:after,
+.rst-content dl dt .headerlink:after {
+    visibility: visible;
+    content: "\e8c3";
+    font-family: entypo;
+    display: inline-block
+}
+
+
+/* color of .. warning directive body */
+
+.wy-alert.wy-alert-warning,
+.rst-content .wy-alert-warning.note,
+.rst-content .attention,
+.rst-content .caution,
+.rst-content .wy-alert-warning.danger,
+.rst-content .wy-alert-warning.error,
+.rst-content .wy-alert-warning.hint,
+.rst-content .wy-alert-warning.important,
+.rst-content .wy-alert-warning.tip,
+.rst-content .warning,
+.rst-content .wy-alert-warning.seealso {
+    background: #FFD4A4
+}
+
+
+/* color of .. warning directives title */
+
+.wy-alert.wy-alert-warning .wy-alert-title,
+.rst-content .wy-alert-warning.note .wy-alert-title,
+.rst-content .attention .wy-alert-title,
+.rst-content .caution .wy-alert-title,
+.rst-content .wy-alert-warning.danger .wy-alert-title,
+.rst-content .wy-alert-warning.error .wy-alert-title,
+.rst-content .wy-alert-warning.hint .wy-alert-title,
+.rst-content .wy-alert-warning.important .wy-alert-title,
+.rst-content .wy-alert-warning.tip .wy-alert-title,
+.rst-content .warning .wy-alert-title,
+.rst-content .wy-alert-warning.seealso .wy-alert-title,
+.wy-alert.wy-alert-warning .rst-content .admonition-title,
+.rst-content .wy-alert.wy-alert-warning .admonition-title,
+.rst-content .wy-alert-warning.note .admonition-title,
+.rst-content .attention .admonition-title,
+.rst-content .caution .admonition-title,
+.rst-content .wy-alert-warning.danger .admonition-title,
+.rst-content .wy-alert-warning.error .admonition-title,
+.rst-content .wy-alert-warning.hint .admonition-title,
+.rst-content .wy-alert-warning.important .admonition-title,
+.rst-content .wy-alert-warning.tip .admonition-title,
+.rst-content .warning .admonition-title,
+.rst-content .wy-alert-warning.seealso .admonition-title {
+    background: #FF8700
+}
+
+/* sidebar hyperlinks */
+
+.wy-menu-vertical a, .wy-menu-vertical a:visited {
+    display: inline-block;
+    line-height: 18px;
+    padding: 0.4045em 1.618em;
+    display: block;
+    position: relative;
+    font-size: 90%;
+    color: #b3b3b3;
+}
+
+
+.wy-side-nav-search>a, .wy-side-nav-search>a:visited,
+.wy-side-nav-search .wy-dropdown>a,
+.wy-side-nav-search .wy-dropdown>a:visited {
+    color: #fcfcfc;
+    font-size: 35px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: 0.809em;
+    font-family: MissionScript;
+}
+
+
+/* size of sidebar nav links */
+
+.wy-menu-vertical li.on a,
+.wy-menu-vertical li.current>a {
+    color: #404040;
+    padding: .9em 1.618em;
+    font-weight: bold;
+    position: relative;
+    background: #fcfcfc;
+    border: none;
+    border-bottom: solid 1px #c9c9c9;
+    border-top: solid 1px #c9c9c9;
+    padding-left: 1.618em -4px
+}
+
+.wy-menu-vertical a {
+    display: inline-block;
+    line-height: 18px;
+    padding: .9em 1.618em;
+    display: block;
+    position: relative;
+    font-size: 90%;
+    color: #b3b3b3
+}
+
+.wy-menu-vertical li.current a {
+    color: gray;
+    border-right: solid 1px #c9c9c9;
+    padding: 0.6em 2.427em
+}
+
+
+/* border attempt */
+
+
+.content-outer {
+    background: url('../images/scallopededge.png');
+    background-size: 300px 20px;
+    background-repeat: no-repeat;
+    background-position: 50% -8px;
+}
+
+
+.wy-menu {
+    padding-top: 25px;
+}

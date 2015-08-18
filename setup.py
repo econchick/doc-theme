@@ -1,25 +1,57 @@
 # -*- coding: utf-8 -*-
 # Copyright (c) 2015 PyLadies
 
-import codecs
+import io
 import os.path
+import re
 
 from setuptools import setup
 
-readme_path = os.path.join(os.path.dirname(__file__), 'README.rst')
 
-with codecs.open(readme_path, encoding='utf-8') as f:
-    long_description = f.read()
+NAME = "pyladies-sphinx-theme"
+META_PATH = os.path.join("pyladies_sphinx_theme", "__init__.py")
+
+
+HERE = os.path.abspath(os.path.dirname(__file__))
+
+
+def read(*filenames, **kwargs):
+    encoding = kwargs.get('encoding', 'utf-8')
+    sep = kwargs.get('sep', '\n')
+    buf = []
+    for fl in filenames:
+        with io.open(fl, encoding=encoding) as f:
+            buf.append(f.read())
+    return sep.join(buf)
+
+
+META_FILE = read(META_PATH)
+
+
+def find_meta(meta):
+    """
+    Extract __*meta*__ from META_FILE.
+    """
+    meta_match = re.search(
+        r"^__{meta}__ = ['\"]([^'\"]*)['\"]".format(meta=meta),
+        META_FILE, re.M
+    )
+    if meta_match:
+        return meta_match.group(1)
+    raise RuntimeError("Unable to find __{meta}__ string.".format(meta=meta))
+
+
+long_description = read('README.rst', 'docs/changelog.rst')
 
 
 setup(
-    name='pyladies-sphinx-theme',
-    version='0.1.dev0',
-    description='A PyLadies theme for Sphinx',
+    name="pyladies-sphinx-theme",
+    version=find_meta("version"),
+    description=find_meta("description"),
     long_description=long_description,
-    url='https://github.com/pyladies/doc-theme',
-    author='PyLadies',
-    license='MIT',
+    url=find_meta("uri"),
+    author=find_meta("author"),
+    license=find_meta("license"),
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Framework :: Sphinx :: Theme',

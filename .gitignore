@@ -1,0 +1,10 @@
+*.pyc
+*.db
+*.log
+_build/
+.DS_Store
+build/
+*.egg*
+dist/
+bower_components/
+node_modules/
