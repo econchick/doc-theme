@@ -252,3 +252,19 @@ a:visited {
 .wy-menu {
     padding-top: 25px;
 }
+
+
+/* expand navbar */
+.wy-menu-vertical li span.toctree-expand:before  {
+    content: "\e8f0";
+    font-family: entypo;
+  }
+
+/* min navbar */
+/* expand navbar */
+.fa-minus-square-o:before,
+.wy-menu-vertical li.on a span.toctree-expand:before,
+.wy-menu-vertical li.current > a span.toctree-expand:before  {
+    content: "\e8d8";
+    font-family: entypo;
+  }

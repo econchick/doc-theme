@@ -1,0 +1,54 @@
+.codeblock-example
+  border: 1px solid $fixme-table-border-color
+  border-bottom: none
+  padding: $pyladies-base-line-height
+  padding-top: $pyladies-base-line-height * 2
+  font-weight: 500
+  background: $fixme-white
+  position: relative
+  &:after
+    content: "Example"
+    position: absolute
+    top: 0px
+    left: 0px
+    background: $fixme-purple
+    color: lighten($fixme-purple, 80%)
+    padding: $pyladies-base-line-height / 4 $pyladies-base-line-height / 2
+  &.prettyprint-example-only
+    border: 1px solid $fixme-table-border-color
+    margin-bottom: $pyladies-base-line-height
+
+.codeblock, div[class^='highlight']
+  border: 1px solid $fixme-table-border-color
+  padding: 0px
+  overflow-x: auto
+  background: $fixme-white
+  // 1px hack otherwise border won't show. lame
+  margin: 1px 0 $pyladies-base-line-height 0
+  div[class^='highlight']
+    border: none
+    background: none
+    margin: 0
+// Needs 100% width for line highlighting to work properly
+div[class^='highlight'] td.code
+  width: 100%
+.linenodiv pre
+  border-right: solid 1px lighten($fixme-table-border-color, 2%)
+  margin: 0
+  padding: $pyladies-base-line-height / 2 $pyladies-base-line-height / 2
+  font-family: $pyladies-monospace
+  font-size: 12px
+  line-height: 1.5
+  color: $fixme-lighter
+div[class^='highlight'] pre
+  white-space: pre
+  margin: 0
+  padding: $pyladies-base-line-height / 2 $pyladies-base-line-height / 2
+  font-family: $pyladies-monospace
+  font-size: 12px
+  line-height: 1.5
+  display: block
+  overflow: auto
+  color: $fixme-color
+pre.literal-block
+  @extend .codeblock

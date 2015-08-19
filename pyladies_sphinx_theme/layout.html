@@ -9,7 +9,6 @@
 
 <!DOCTYPE html>
 <!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   {{ metatags }}
@@ -23,7 +22,7 @@
 
   {# CSS #}
 
-  {% set css_files = css_files + ["_static/css/style.css"] %}
+  {% set css_files = css_files + ["_static/css/pyladies.css"] %}
   {% for cssfile in css_files %}
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {% endfor %}
@@ -63,13 +62,14 @@
 </head>
 
 
-<body class="wy-body-for-nav" role="document">
+<body class="pyladies-body-nav" role="document">
 
-  <div class="wy-grid-for-nav">
+  <div class="pyladies-grid-nav">
 
     {# SIDE NAV, TOGGLES ON MOBILE #}
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
+    {# using wy-nav-shift from rtd theme (javascript) #}
+    <nav data-toggle="wy-nav-shift" class="pyladies-nav-side">
+      <div class="pyladies-sidebar-search">
         {% block sidebartitle %}
 
         {% if logo and theme_logo_only %}
@@ -88,8 +88,8 @@
 
         {% endblock %}
       </div>
-      <div class="content-outer">
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+      <div class="pyladies-content-outer">
+        <div class="pyladies-menu pyladies-menu-vert" data-spy="affix" role="navigation" aria-label="main navigation">
           {% block menu %}
             {% set toctree = toctree(maxdepth=4, collapse=theme_collapse_navigation, includehidden=True) %}
             {% if toctree %}
@@ -104,17 +104,17 @@
       &nbsp;
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+    <section data-toggle="wy-nav-shift" class="pyladies-nav-content-wrap">
 
       {# MOBILE NAV, TRIGGLES SIDE NAV ON TOGGLE #}
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+      <nav class="pyladies-top-nav" role="navigation" aria-label="top navigation">
+        <i data-toggle="pyladies-top-nav" class="icon-menu"></i>
         <a href="{{ pathto(master_doc) }}">{{ project }}</a>
       </nav>
 
 
       {# PAGE CONTENT #}
-      <div class="wy-nav-content">
+      <div class="pyladies-nav-content">
         <div class="rst-content">
           {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">

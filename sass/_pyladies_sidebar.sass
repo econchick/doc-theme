@@ -1,0 +1,219 @@
+// wy-nav-side
+.pyladies-nav-side
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  padding-bottom: 2em
+  width: $pyladies-nav-width
+  overflow-x: hidden
+  overflow-y: scroll
+  min-height: 100%
+  background: $pyladies-sidebar
+  z-index: 200
+
+// wy-side-nav-search
+.pyladies-sidebar-search
+  z-index: 200
+  background-color: $pyladies-light-blue
+  text-align: center
+  padding: $gutter / 2
+  display: block
+  color: $pyladies-section-background
+  // margin-bottom: $gutter / 2
+  margin-bottom: 0em
+  input[type=text]
+    width: 100%
+    border-radius: 50px
+    padding: 6px 12px
+    border-color: darken($pyladies-link-color, 5%)
+  img
+    display: block
+    margin: auto auto $gutter / 2 auto
+    height: 45px
+    width: 45px
+    background-color: $pyladies-light-blue
+    padding: 5px
+    border-radius: 100%
+  > a, .pyladies-dropdown > a
+    color: $pyladies-background
+    font-size: 35px
+    font-weight: bold
+    font-family: $pyladies-header-font
+    display: inline-block
+    padding: 4px 6px
+    margin-bottom: $gutter / 2
+    -webkit-font-smoothing: antialiased
+    &:hover
+      background: rgba(255,255,255,.1)
+    img.logo
+      display: block  // display on its own line all the time
+      margin: 0 auto
+      height: auto  // undo badge styling above
+      width: auto
+      border-radius: 0
+      max-width: 100%  // shrink on mobile, if appropriate
+      background: rgba(0,0,0,0)  // make hover background of parent show up properly
+    &.icon
+      img.logo
+        margin-top: 0.85em  // space it away from the title text
+  > div.version
+    margin-top: -1 * ($gutter / 4)
+    margin-bottom: $gutter / 2
+    font-weight: normal
+    color: rgba(255,255,255,.3)
+
+// for scalloped edge below search
+.pyladies-content-outer
+  background: url($pyladies-scallop-background)
+  background:
+    size: 300px 20px
+    repeat: no-repeat
+    position: 50% -8px
+
+// wy-menu
+.pyladies-menu
+  a:hover
+    text-decoration: none
+
+// wy-menu-vertical
+.pyladies-menu-vert
+  header, p.caption
+    height: $fixme-base-font-size * 2
+    display: inline-block
+    line-height: $fixme-base-font-size * 2
+    padding: 0 $gutter
+    margin-bottom: 0
+    display: block
+    font-weight: bold
+    text-transform: uppercase
+    font-size: 80%
+    color: $fixme-menu-color
+    white-space: nowrap
+  ul
+    margin-bottom: 0
+  li
+    &.divide-top
+      border-top: solid 1px hs1(0, 0%, 25%)
+    &.divide-bottom
+      border-bottom: solid 1px hsl(0, 0%, 25%)
+    &.current
+      background: darken($pyladies-section-background, 10%)
+      a
+        color: $fixme-link-medium
+        border-right: solid 1px darken($pyladies-section-background, 20%)
+        padding: $gutter / 2 $gutter
+        &:hover
+          background: darken($pyladies-section-background, 15%)
+    code
+      border: none
+      background: inherit
+      color: inherit
+      padding-left: 0
+      padding-right: 0
+    // Expand links
+    span.toctree-expand
+      display: block
+      float: left
+      margin-left: -1.2em
+      // fixme!
+      // @extend .icon-plus
+      font-size: .8em
+      line-height: 1.6em
+      color: darken($fixme-link-menu-item, 20%)
+
+  // On state for the first level
+  li.on a, li.current > a
+    color: $fixme-link-menu-item
+    padding: $gutter / 4 $gutter
+    font-weight: bold
+    position: relative
+    background: $pyladies-background
+    border: none
+    // border-bottom: solid 1px darken($menu-vertical-background-color, 20%)
+    // border-top: solid 1px darken($menu-vertical-background-color, 20%)
+    border-bottom: solid 1px $pyladies-navbar-separator
+    border-top: solid 1px $pyladies-navbar-separator
+    padding-left: $gutter -4px
+    -webkit-font-smoothing: antialiased
+    &:hover
+      background: $pyladies-section-background
+      span.toctree-expand
+        color: $fixme-link-medium
+    span.toctree-expand
+      // fixme!
+      // @extend .icon-minus
+      display: block
+      font-size: .8em
+      line-height: 1.6em
+      color: darken($fixme-link-medium, 30%)
+
+  // This is the on state for pages beyond second level
+  li.toctree-l1.current li.toctree-l2, li.toctree-l2.current li.toctree-l3
+    > ul
+      display: none
+    &.current > ul
+      display: block
+  li.toctree-l2
+    &.current
+      > a
+        background: darken($pyladies-section-background, 20%)
+        padding: $gutter / 4 $gutter * 1.5
+      li.toctree-l3 > a
+        display: block
+        background: darken($pyladies-section-background, 20%)
+        padding: $gutter / 4 $gutter * 2.5
+    a:hover span.toctree-expand
+      color: $fixme-link-medium
+    span.toctree-expand
+      color: darken($pyladies-section-background, 35%)
+  li.toctree-l3
+    font-size: .9em
+    &.current
+      > a
+        background: darken($pyladies-section-background, 25%)
+        padding: $gutter / 4 $gutter * 2.5
+      li.toctree-l4 > a
+        display: block
+        background: darken($pyladies-section-background, 25%)
+        padding: $gutter / 4 $gutter * 3.5
+        border-top: none
+        border-bottom: none
+    a:hover span.toctree-expand
+      color: $fixme-link-medium
+    span.toctree-expand
+      color: darken($pyladies-section-background, 40%)
+  li.toctree-l4
+    font-size: .9em
+
+  li.current ul
+    display: block
+  li ul
+    margin-bottom: 0
+    display: none
+  .local-toc
+    li ul
+      display: block
+  li ul li a
+    margin-bottom: 0
+    color: $fixme-link-light
+    font-weight: normal
+  a
+    display: inline-block
+    line-height: 18px
+    padding: $gutter / 4 $gutter
+    display: block
+    position: relative
+    font-size: 90%
+    color: $fixme-link-light
+    &:hover
+      background-color: lighten($fixme-menu-background-color, 10%)
+      cursor: pointer
+      span.toctree-expand
+        color: $fixme-link-light
+    &:active
+      background-color: $fixme-logo-color
+      cursor: pointer
+      color: $fixme-link-active
+      span.toctree-expand
+        color: $fixme-link-active

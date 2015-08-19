@@ -14,7 +14,7 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 1919,
-          base: 'docs/_build/html',
+          base: 'demo_docs/_build/html',
           livereload: true
         }
       }
@@ -23,7 +23,7 @@ module.exports = function(grunt) {
       fonts: {
         files: [
           // includes files within path
-          {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'pyladies/static/fonts/', filter: 'isFile'}
+          {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'pyladies_sphinx_theme/static/fonts/', filter: 'isFile'}
         ]
       }
     },
@@ -38,7 +38,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'sass',
           src: ['*.sass'],
-          dest: 'pyladies/static/css',
+          dest: 'pyladies_sphinx_theme/static/css',
           ext: '.css'
         }]
       },
@@ -51,7 +51,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'sass',
           src: ['*.sass'],
-          dest: 'pyladies/static/css',
+          dest: 'pyladies_sphinx_theme/static/css',
           ext: '.css'
         }]
       }
@@ -62,12 +62,12 @@ module.exports = function(grunt) {
         cmd: 'bower update'
       },
       build_sphinx: {
-        cmd: 'sphinx-build -b html -d docs/_build/doctrees  docs/ docs/_build/html'
+        cmd: 'sphinx-build -b html -d demo_docs/_build/doctrees  demo_docs/ demo_docs/_build/html'
       }
     },
     clean: {
-      build: ["docs/_build"],
-      fonts: ["pyladies/static/fonts"]
+      build: ["demo_docs/_build"],
+      fonts: ["pyladies_sphinx_theme/static/fonts"]
     },
 
     watch: {
@@ -78,12 +78,12 @@ module.exports = function(grunt) {
       },
       /* Changes in theme dir rebuild sphinx */
       sphinx: {
-        files: ['pyladies/**/*', 'docs/**/*.rst', 'docs/**/*.py'],
+        files: ['pyladies_sphinx_theme/**/*', 'demo_docs/**/*.rst', 'demo_docs/**/*.py'],
         tasks: ['clean:build','exec:build_sphinx']
       },
       /* live-reload the demo_docs if sphinx re-builds */
       livereload: {
-        files: ['docs/_build/**/*'],
+        files: ['demo_docs/_build/**/*'],
         options: { livereload: true }
       }
     }

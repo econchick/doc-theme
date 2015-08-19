@@ -1,22 +1,13 @@
-/* sky: #A8E5FF
-too effin blue: #29ABE2
-midnight jazz #282560
-light orange: #FFD4A4
-dark orange: #FF8700
-green: rgb(76, 177, 57);
-lime green: rgb(100, 232, 43);
-wild berries: #1D0437;
-*/
-
 
 // Theme colors
 
 $pyladies-background:           #fcfcfc
 $pyladies-light-blue:           #29ABE2
-$pyladies-
 $pyladies-berry-blue:           #1D0437
 $pyladies-green:                #4CB139
 $pyladies-grey:                 #404040
+$pyladies-section-background:   hsl(0,0%,99%)
+$pyladies-navbar-separator:     #c9c9c9
 
 
 // Typography
@@ -34,6 +25,8 @@ $pyladies-link-color:           $pyladies-light-blue
 $pyladies-link-visited:         lighten($pyladies-link-color, 6%)
 $pyladies-link-hover:           $pyladies-link-visited
 
+$pyladies-base-line-height:     24px !default
+
 // Sidebar colors
 
 $pyladies-sidebar:              #343131
@@ -43,6 +36,7 @@ $pyladies-sidebar-child:        #e3e3e3
 
 // Icons
 
+$pyladies-icon-prefix:          "icon-"
 $pyladies-icon-header-link:     "icon-link"
 $pyladies-icon-open:            "icon-plus"
 $pyladies-icon-close:           "icon-minus"
@@ -50,3 +44,57 @@ $pyladies-icon-help:            "icon-help"
 $pyladies-icon-info:            "icon-info"
 $pyladies-icon-github:          "icon-github"
 
+// Assets
+// assumed on the same level as where a `css` dir is, e.g.
+//   static/
+//     css/
+//     fonts/
+//     images/
+$pyladies-image-dir:            "../images/"
+$pyladies-font-dir:             "../fonts/"
+$_icon-geek:                    "pylady_geek_greyblue_icon.png"
+$_scallop-background:           "scallopededge.png"
+$pyladies-icon-geek:            $pyladies-image-dir + $_icon-geek
+$pyladies-scallop-background:   $pyladies-image-dir + $_scallop-background
+
+
+// grids
+// $mobile: new-breakpoint(max-width 480px 4)
+$pyladies-nav-width:            300px
+$gutter:                        1.618em !default
+
+
+
+// test shit
+$foo-color:                     #ffffff
+
+
+// maybe replace these
+$fixme-base-font-size:          32px
+
+// css = "gray"
+$fixme-gray:                    #808080
+$fixme-color:                   #404040
+$fixme-link-medium:             $fixme-gray
+$fixme-menu-color:              $fixme-gray
+$fixme-link-menu-item:          $fixme-color
+$fixme-link-light:              #b3b3b3
+$fixme-menu-background-color:   #4e4a4a
+$fixme-logo-color:              #2980b9
+$fixme-link-active:             #fff
+$fixme-white:                   #fff
+
+$fixme-link-color:              #2980b9
+$fixme-table-border-color:      #e1e4e5
+$fixme-highlight-color:         #f1c40f
+$fixme-gray-light:              #999
+$fixme-black:                   #e74c3c
+$fixme-class-color:             #2980b9
+$fixme-method-color:            $fixme-gray
+$fixme-headerlink-color:        $fixme-color
+$fixme-viewcode-color:          #27ae60
+$fixme-sidebar-background:      #f3f6f6
+$fixme-sidebar-border-color:    #e1e4e5
+
+$fixme-purple:                  #9b59b6
+$fixme-lighter:                 #d9d9d9
