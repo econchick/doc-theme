@@ -6,9 +6,8 @@ import sys
 
 
 sys.path.append(os.path.abspath('.'))
-sys.path.append(os.path.abspath('..'))
 
-import pyladies_sphinx_theme
+# import pyladies_sphinx_theme
 
 extensions = []
 project = u'PyLadies Handbook'
@@ -24,15 +23,17 @@ source_suffix = '.rst'
 
 # html_theme = "pyladies"
 # html_theme_path = ["_themes"]
-html_theme_path = [pyladies_sphinx_theme.get_path()]
+# html_theme_path = [pyladies_sphinx_theme.get_path()]
+html_theme_path = [".."]
 html_theme = 'pyladies_sphinx_theme'
 
-html_style = "css/custom.css"
+# html_style = "css/pyladies.css"
 html_title = "PyLadies Organizer Handbook"
 html_short_title = "PyLadies Kit"
 html_favicon = "_static/favicon.ico"
 html_static_path = ['_static']
 html_use_smartypants = True
+html_logo = "_static/images/pylady_geek_greyblue_icon.png"
 htmlhelp_basename = 'PyLadiesHandbookdoc'
 
 latex_documents = [

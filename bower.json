@@ -27,6 +27,6 @@
     "src"
   ],
   "devDependencies": {
-    "wyrm": "~0.0.x"
+    "entypo-plus": "*"
   }
 }

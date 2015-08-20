@@ -21,9 +21,13 @@
   <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
 
   {# CSS #}
+  {% if not READTHEDOCS %}
+    <!-- foooo -->
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+  {% endif %}
 
-  {% set css_files = css_files + ["_static/css/pyladies.css"] %}
   {% for cssfile in css_files %}
+    <!-- bar -->
     <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
   {% endfor %}
 
@@ -72,16 +76,8 @@
       <div class="pyladies-sidebar-search">
         {% block sidebartitle %}
 
-        {% if logo and theme_logo_only %}
-          <a href="{{ pathto(master_doc) }}">
-        {% else %}
-          <a href="{{ pathto(master_doc) }}" class="icon icon-home"> {{ project }}
-        {% endif %}
-
-        {% if logo %}
-          {# Not strictly valid HTML, but it's the only way to display/scale it properly, without weird scripting or heaps of work #}
-          <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" />
-        {% endif %}
+        <a href="{{ pathto(master_doc) }}">
+          <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" /> {{ project }}
         </a>
 
         {% include "searchbox.html" %}
@@ -116,7 +112,6 @@
       {# PAGE CONTENT #}
       <div class="pyladies-nav-content">
         <div class="rst-content">
-          {% include "breadcrumbs.html" %}
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             {% block body %}{% endblock %}

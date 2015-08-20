@@ -23,7 +23,7 @@ module.exports = function(grunt) {
       fonts: {
         files: [
           // includes files within path
-          {expand: true, flatten: true, src: ['bower_components/font-awesome/fonts/*'], dest: 'pyladies_sphinx_theme/static/fonts/', filter: 'isFile'}
+          {expand: true, flatten: true, src: ['bower_components/entypo-plus/fonts/*'], dest: 'pyladies_sphinx_theme/static/fonts/', filter: 'isFile'}
         ]
       }
     },
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
       build: {
         options: {
           style: 'compressed',
-          loadPath: ['bower_components/bourbon/dist', 'bower_components/neat/app/assets/stylesheets', 'bower_components/font-awesome/scss', 'bower_components/wyrm/sass']
+          loadPath: ['bower_components/entypo-pluss/scss']
         },
         files: [{
           expand: true,
